@@ -5,7 +5,7 @@
 - BSc Biochemistry
 
 ### Work Experience
-**Bioinformatics Researcher @ CaresAI
+Bioinformatics Researcher @ CaresAI
 - Drug repurposing
 - Immunoinformatics
 
