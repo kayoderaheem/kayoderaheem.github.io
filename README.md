@@ -1,12 +1,14 @@
 # Msc Bioinformatics
 
 ### Education
-Msc Bioinformatics
-Bsc Biochemistry
+- Msc Bioinformatics
+- BSc Biochemistry
+
 ### Work Experience
-Bioinformatics Researcher @ CaresAI
+**Bioinformatics Researcher @ CaresAI
 - Drug repurposing
-- Immuninformatics
+- Immunoinformatics
+
 ### Project
 - Biomarkers
 - Drug
