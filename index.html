@@ -1,308 +1,466 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kayode Raheem, MS - PhD Student in Bioinformatics</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-body {
-font-family: 'Inter', sans-serif;
-/* Light theme with subtle, colorful gradients */
-background-color: #f9fafb; /* gray-50 */
-background-image:
-radial-gradient(at 20% 15%, hsla(212, 72%, 93%, 0.5) 0px, transparent 50%),
-radial-gradient(at 80% 20%, hsla(289, 62%, 93%, 0.4) 0px, transparent 50%),
-radial-gradient(at 10% 85%, hsla(190, 72%, 93%, 0.5) 0px, transparent 50%),
-radial-gradient(at 85% 90%, hsla(340, 72%, 95%, 0.4) 0px, transparent 50%);
-color: #374151; /* gray-700 */
-}
-/* Make scrollbar thinner and less obtrusive */
-::-webkit-scrollbar {
-width: 8px;
-}
-::-webkit-scrollbar-track {
-background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-background: #d1d5db;
-border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-background: #9ca3af;
-}
-/* Main layout styling */
-.sidebar {
-transition: transform 0.3s ease-in-out;
-}
-@media (max-width: 1024px) {
-.sidebar {
-transform: translateX(-100%);
-}
-.sidebar.open {
-transform: translateX(0);
-}
-main {
-margin-left: 0 !important;
-}
-}
-/* Styling for social icons */
-.social-icon:hover {
-transform: scale(1.15);
-}
-.publication-link {
-transition: background-color 0.2s ease, color 0.2s ease;
-}
-.section-card {
-background-color: rgba(255, 255, 255, 0.8); /* White with opacity */
-backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
-border: 1px solid rgba(0, 0, 0, 0.05);
-box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4f46e5" />
+
+  <title>Kayode Raheem, MS — Bioinformatics & Computational Oncology</title>
+  <meta name="description" content="Kayode Raheem is a PhD student in Bioinformatics and Systems Biology at the University of Nebraska Medical Center, working on computational oncology, multi-omics, AI/ML, and computational drug discovery." />
+  <meta name="author" content="Kayode Raheem" />
+  <link rel="canonical" href="https://kayoderaheem.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Kayode Raheem, MS — Bioinformatics & Computational Oncology" />
+  <meta property="og:description" content="PhD student in Bioinformatics and Systems Biology at UNMC. Computational oncology, multi-omics, AI/ML, and drug discovery." />
+  <meta property="og:url" content="https://kayoderaheem.github.io/" />
+  <meta property="og:image" content="https://kayoderaheem.github.io/assets/images/kayode-portrait.jpg" />
+  <meta property="profile:first_name" content="Kayode" />
+  <meta property="profile:last_name" content="Raheem" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kayode Raheem, MS — Bioinformatics & Computational Oncology" />
+  <meta name="twitter:description" content="PhD student in Bioinformatics and Systems Biology at UNMC. Computational oncology, multi-omics, AI/ML, and drug discovery." />
+  <meta name="twitter:image" content="https://kayoderaheem.github.io/assets/images/kayode-portrait.jpg" />
+  <meta name="twitter:site" content="@yomikayode3" />
+
+  <!-- Inline SVG favicon (initials) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Inter,system-ui,sans-serif' font-size='28' font-weight='700' fill='white'%3EKR%3C/text%3E%3C/svg%3E" />
+
+  <!-- Tailwind (Play CDN; pinned major version) -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+
+  <!-- Fonts: preconnect to reduce TTFB, then load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background-color: #f9fafb;
+      background-image:
+        radial-gradient(at 20% 15%, hsla(212, 72%, 93%, 0.5) 0px, transparent 50%),
+        radial-gradient(at 80% 20%, hsla(289, 62%, 93%, 0.4) 0px, transparent 50%),
+        radial-gradient(at 10% 85%, hsla(190, 72%, 93%, 0.5) 0px, transparent 50%),
+        radial-gradient(at 85% 90%, hsla(340, 72%, 95%, 0.4) 0px, transparent 50%);
+      color: #374151;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+    .sidebar { transition: transform 0.3s ease-in-out; }
+    @media (max-width: 1024px) {
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      main { margin-left: 0 !important; }
+    }
+
+    .social-icon { transition: transform 0.2s ease, color 0.2s ease; }
+    .social-icon:hover { transform: scale(1.15); }
+
+    .publication-link { transition: background-color 0.2s ease, color 0.2s ease; }
+
+    .section-card {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    }
+
+    /* Active sidebar link (scroll-spy) */
+    .nav-link[aria-current="true"] {
+      color: #4f46e5;
+      background-color: rgba(79, 70, 229, 0.08);
+    }
+
+    /* Visible focus ring everywhere keyboard users land */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #4f46e5;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #4f46e5;
+      color: white;
+      padding: 0.75rem 1rem;
+      z-index: 100;
+      border-radius: 0 0 0.5rem 0;
+    }
+    .skip-link:focus { left: 0; }
+
+    /* Print: tidy CV-style output */
+    @media print {
+      .sidebar, header, #overlay, .no-print { display: none !important; }
+      main { margin: 0 !important; padding: 0 !important; }
+      .section-card { background: none !important; box-shadow: none !important; border: none !important; }
+      body { background: none !important; color: #000 !important; }
+    }
+  </style>
+
+  <!-- Structured data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kayode Raheem",
+    "givenName": "Kayode",
+    "familyName": "Raheem",
+    "honorificSuffix": "MS",
+    "jobTitle": "PhD Student in Bioinformatics and Systems Biology",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Nebraska Medical Center",
+      "address": "Omaha, NE, United States"
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "COMSATS University Islamabad" },
+      { "@type": "CollegeOrUniversity", "name": "Adekunle Ajasin University" }
+    ],
+    "url": "https://kayoderaheem.github.io/",
+    "image": "https://kayoderaheem.github.io/assets/images/kayode-portrait.jpg",
+    "email": "mailto:kayoderaheem.y@gmail.com",
+    "sameAs": [
+      "https://orcid.org/0000-0001-7975-9228",
+      "https://x.com/yomikayode3",
+      "https://www.linkedin.com/in/raheemkayode01",
+      "https://github.com/kayoderaheem",
+      "https://scholar.google.com/citations?user=6i3ypWwAAAAJ&hl=en"
+    ],
+    "knowsAbout": [
+      "Bioinformatics",
+      "Computational Oncology",
+      "Multi-omics",
+      "Single-cell genomics",
+      "Spatial transcriptomics",
+      "Graph Neural Networks",
+      "Transformer models",
+      "Computational drug discovery",
+      "Clinical informatics"
+    ]
+  }
+  </script>
 </head>
 <body class="antialiased">
 
-<!-- Sidebar Navigation -->
-<aside id="sidebar" class="sidebar bg-white/80 backdrop-blur-md lg:w-72 w-80 h-full fixed top-0 left-0 z-40 p-8 flex flex-col border-r border-gray-200/80 lg:translate-x-0">
-<div class="text-center mb-10">
-<img src="assets/images/Raheem, Kayode   Verticle-3595.jpg" alt="Kayode Raheem" class="w-36 h-36 rounded-2xl mx-auto mb-4 border-4 border-indigo-200">
-<h1 class="text-xl font-bold text-gray-800">Kayode Raheem</h1>
-<p class="text-sm text-gray-500">Bioinformatician</p>
-</div>
-<nav class="flex flex-col space-y-3">
-<a href="#home" class="nav-link text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Home</a>
-<a href="#news" class="nav-link text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">News</a>
-<a href="#research" class="nav-link text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Research</a>
-<a href="#publications" class="nav-link text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Publications</a>
-<a href="#projects" class="nav-link text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Projects</a>
-<a href="#education" class="nav-link text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Education</a>
-<a href="#contact" class="nav-link text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Contact</a>
-</nav>
-<div class="mt-auto text-center text-sm text-gray-400">
-<p>&copy; 2025 Kayode Raheem</p>
-</div>
-</aside>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- Mobile Header -->
-<header class="lg:hidden fixed top-0 left-0 right-0 z-30 bg-white/80 backdrop-blur-sm border-b border-gray-200/80">
-<div class="container mx-auto px-4 sm:px-6 flex justify-between items-center h-16">
-<h1 class="text-lg font-bold text-gray-800">Kayode Raheem, MS</h1>
-<button id="menu-button" class="p-2 text-gray-600">
-<span class="sr-only">Open Menu</span>
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-</button>
-</div>
-</header>
+  <!-- Sidebar Navigation -->
+  <aside id="sidebar" class="sidebar bg-white/80 backdrop-blur-md lg:w-72 w-80 h-full fixed top-0 left-0 z-40 p-8 flex flex-col border-r border-gray-200/80 lg:translate-x-0" aria-label="Primary">
+    <div class="text-center mb-10">
+      <img src="assets/images/kayode-portrait.jpg" alt="Portrait of Kayode Raheem" width="144" height="144" loading="eager" decoding="async" class="w-36 h-36 rounded-2xl mx-auto mb-4 border-4 border-indigo-200 object-cover" />
+      <h1 class="text-xl font-bold text-gray-800">Kayode Raheem</h1>
+      <p class="text-sm text-gray-500">PhD Student, Bioinformatics</p>
+    </div>
+    <nav aria-label="Section navigation">
+      <ul class="flex flex-col space-y-2">
+        <li><a href="#home" class="nav-link block px-3 text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Home</a></li>
+        <li><a href="#news" class="nav-link block px-3 text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">News</a></li>
+        <li><a href="#research" class="nav-link block px-3 text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Research</a></li>
+        <li><a href="#publications" class="nav-link block px-3 text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Publications</a></li>
+        <li><a href="#projects" class="nav-link block px-3 text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Projects</a></li>
+        <li><a href="#education" class="nav-link block px-3 text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Education</a></li>
+        <li><a href="#contact" class="nav-link block px-3 text-gray-600 hover:text-indigo-600 font-medium py-2 rounded-md transition-colors duration-200">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="mt-auto pt-8 text-center text-xs text-gray-400">
+      <p>&copy; <span id="copyright-year">2026</span> Kayode Raheem</p>
+    </div>
+  </aside>
 
-<div id="overlay" class="lg:hidden fixed inset-0 bg-black/50 z-20 hidden"></div>
+  <!-- Mobile Header -->
+  <header class="lg:hidden fixed top-0 left-0 right-0 z-30 bg-white/80 backdrop-blur-sm border-b border-gray-200/80">
+    <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center h-16">
+      <p class="text-lg font-bold text-gray-800">Kayode Raheem, MS</p>
+      <button id="menu-button" type="button" class="p-2 text-gray-600" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </header>
 
-<!-- Main Content -->
-<main class="lg:ml-72 p-6 sm:p-8 lg:p-12">
-<div class="max-w-4xl mx-auto space-y-24">
-<!-- Home Section -->
-<section id="home" class="min-h-screen flex items-center -mt-16 lg:-mt-24">
-<div class="w-full">
-<h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-<p class="text-lg leading-relaxed text-gray-600 mb-6">
-I am a research scientist working across <span class="font-medium">bioinformatics</span>, <span class="font-medium">AI/ML</span>, and <span class="font-medium">translational medicine</span>. 
-I integrate <span class="font-medium">genomics and spatial/single-cell omics</span> with <span class="font-medium">digital pathology</span> and 
-<span class="font-medium">clinical informatics</span> to model tumor evolution, forecast therapy response, and discover biomarkers. 
-Methodologically, I build <span class="font-medium">graph neural networks</span> and <span class="font-medium">transformer models</span> with causal and temporal analytics, 
-delivered as <span class="font-medium">reproducible pipelines</span> (Nextflow/nf-core, containers, HPC/cloud). 
-I also collaborate on <span class="font-medium">computational drug discovery</span> and pursue <span class="font-medium">health equity</span> through generalizable, fair evaluation. 
-My goal is to translate robust, explainable AI into <span class="font-medium">clinically actionable</span> insights while building open tools and mentoring trainees.
-</p>
+  <div id="overlay" class="lg:hidden fixed inset-0 bg-black/50 z-20 hidden"></div>
 
-<ul class="flex flex-wrap gap-2 mb-8">
-  <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Computational Oncology</li>
-  <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Spatial/Single-cell Omics</li>
-  <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">GNNs & Transformers</li>
-  <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Drug Discovery</li>
-  <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Clinical Informatics</li>
-  <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Reproducible Workflows</li>
-  <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Health Equity</li>
-</ul>
-<div class="flex flex-wrap gap-4">
-<a href="https://x.com/yomikayode3" class="social-icon text-gray-400 hover:text-blue-500 transition-colors duration-300" title="Twitter"><span class="sr-only">Twitter</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a>
-<a href="https://www.linkedin.com/in/raheemkayode01" class="social-icon text-gray-400 hover:text-blue-700 transition-colors duration-300" title="LinkedIn"><span class="sr-only">LinkedIn</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-<a href="https://github.com/kayoderaheem" class="social-icon text-gray-400 hover:text-gray-800 transition-colors duration-300" title="GitHub"><span class="sr-only">GitHub</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"/></svg></a>
-<a href="https://scholar.google.com/citations?user=6i3ypWwAAAAJ&hl=en" class="social-icon text-gray-400 hover:text-blue-600 transition-colors duration-300" title="Google Scholar"><span class="sr-only">Google Scholar</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-3.866 0-7 3.134-7 7c0 1.645.564 3.153 1.522 4.354l1.453-1.164A5.474 5.474 0 017 17c0-2.757 2.243-5 5-5s5 2.243 5 5c0 .352-.036.696-.106 1.028l1.453 1.164C19.436 20.153 20 18.645 20 17c0-3.866-3.134-7-7-7z"/></svg></a>
-<a href="#" class="social-icon text-gray-400 hover:text-green-600 transition-colors duration-300" title="Download CV"><span class="sr-only">Download CV</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M6 2a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H6zm6 2.5L16.5 9H12V4.5zM8 12a1 1 0 011-1h6a1 1 0 110 2H9a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H9z"/></svg></a>
-</div>
-</div>
-</section>
+  <!-- Main Content -->
+  <main id="main" class="lg:ml-72 p-6 sm:p-8 lg:p-12">
+    <div class="max-w-4xl mx-auto space-y-24">
 
-<!-- News Section -->
-<section id="news">
-<h2 class="text-3xl font-bold text-gray-900 mb-8">News</h2>
-<div class="space-y-6">
-<div class="flex items-start space-x-4">
-<p class="bg-indigo-100 text-indigo-800 font-semibold px-3 py-1 rounded-md text-sm whitespace-nowrap">Aug 2025</p>
-<p class="text-gray-700">Our paper on Kaempferols from Echinacea purpurea Demonstrate Anti-Cancer Potential by Targeting Anexelekto in Breast Cancer Therapy Using Chemoinformatics Approach has been accepted by the <span class="font-semibold italic">Discover Oncology</span>.</p>
-</div>
-<div class="flex items-start space-x-4">
-<p class="bg-indigo-100 text-indigo-800 font-semibold px-3 py-1 rounded-md text-sm whitespace-nowrap">Dec 2024</p>
-<p class="text-gray-700">I joined the University of Nebraska Medical Center as a PhD Student in Bioinformatics and System Biology. Looking forward to this new chapter!</p>
-</div>
-<div class="flex items-start space-x-4">
-<p class="bg-indigo-100 text-indigo-800 font-semibold px-3 py-1 rounded-md text-sm whitespace-nowrap">Jun 2022</p>
-<p class="text-gray-700">Presented my work on the Therapeutic capability of selected medicinal plants'  
+      <!-- Home / Hero -->
+      <section id="home" class="min-h-screen flex items-center -mt-16 lg:-mt-24" aria-labelledby="home-heading">
+        <div class="w-full">
+          <p class="text-sm font-semibold tracking-widest text-indigo-600 uppercase mb-3">Bioinformatics &middot; Computational Oncology</p>
+          <h2 id="home-heading" class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Hi, I'm Kayode Raheem.</h2>
+          <p class="text-lg sm:text-xl text-gray-600 mb-6 max-w-3xl">
+            I build AI-driven, reproducible pipelines that turn multi-omics and clinical data into translational insights for cancer research.
+          </p>
+          <p class="text-base leading-relaxed text-gray-600 mb-8 max-w-3xl">
+            I work across <span class="font-medium">bioinformatics</span>, <span class="font-medium">AI/ML</span>, and <span class="font-medium">translational medicine</span>, integrating <span class="font-medium">genomics and spatial/single-cell omics</span> with <span class="font-medium">digital pathology</span> and <span class="font-medium">clinical informatics</span> to model tumor evolution, forecast therapy response, and discover biomarkers. Methodologically, I build <span class="font-medium">graph neural networks</span> and <span class="font-medium">transformer models</span> with causal and temporal analytics, delivered as <span class="font-medium">reproducible pipelines</span> (Nextflow/nf-core, containers, HPC/cloud). I also collaborate on <span class="font-medium">computational drug discovery</span> and pursue <span class="font-medium">health equity</span> through generalizable, fair evaluation.
+          </p>
 
-bioactive constituents against the mutant ovarian TP53 gene; A computational approach. at the 30th Conference on Intelligent Systems for Molecular Biology (ISMB), International Society for Computational Biology (ISCB)</p>
-</div>
-</div>
-</section>
+          <ul class="flex flex-wrap gap-2 mb-8" aria-label="Areas of focus">
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Computational Oncology</li>
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Spatial / Single-cell Omics</li>
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">GNNs &amp; Transformers</li>
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Drug Discovery</li>
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Clinical Informatics</li>
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Reproducible Workflows</li>
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Health Equity</li>
+          </ul>
 
-<!-- Research Section -->
-<section id="research" class="section-card rounded-lg p-8">
-<h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Research Interests</h2>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="text-center">
-<img src="assets/images/cancer-genomics.img.png" alt="Cancer Genomics" class="rounded-lg mb-4 w-full h-48 object-cover">
-<h3 class="font-bold text-lg text-gray-800">Cancer Genomics</h3>
-<p class="text-gray-600">Utilizing NGS data to understand the genomic landscape of cancer and identify novel biomarkers.</p>
-</div>
-<div class="text-center">
-<img src="assets/images/Drug-discovery.img.png" alt="Computational Drug Discovery" class="rounded-lg mb-4 w-full h-48 object-cover">
-<h3 class="font-bold text-lg text-gray-800">Computational Drug Discovery</h3>
-<p class="text-gray-600">Employing structural bioinformatics to study protein-ligand interactions and design potential therapeutics.</p>
-</div>
-<div class="text-center">
-<img src="assets/images/ALML.img.png" alt="AL/ML" class="rounded-lg mb-4 w-full h-48 object-cover">
-<h3 class="font-bold text-lg text-gray-800">Artificial Intelligence / Machine Learning</h3>
-<p class="text-gray-600">Applying AI and ML techniques to analyze complex biological data and improve predictive modeling.</p>
-</div>
-</div>
-</section>
+          <div class="flex flex-wrap items-center gap-3 mb-8">
+            <a href="#contact" class="inline-flex items-center gap-2 bg-indigo-600 text-white font-semibold py-2.5 px-5 rounded-lg hover:bg-indigo-700 transition-colors duration-200">
+              Get in touch
+            </a>
+            <a href="cv.pdf" class="inline-flex items-center gap-2 bg-white text-gray-800 font-semibold py-2.5 px-5 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors duration-200">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H6zm6 2.5L16.5 9H12V4.5zM8 12a1 1 0 011-1h6a1 1 0 110 2H9a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H9z"/></svg>
+              Download CV
+            </a>
+          </div>
 
-<!-- Publications Section -->
-<section id="publications">
-<h2 class="text-3xl font-bold text-gray-900 mb-8">Selected Publications</h2>
-<div class="space-y-8">
-</div>
-<div class="section-card p-6 rounded-lg">
-<h3 class="font-bold text-lg text-gray-800">Design of personalized neoantigen mRNA vaccines against breast cancer patients in Pakistan based on next-generation sequencing data.</h3>
-<p class="text-gray-600 mt-1"><span class="font-semibold">Raheem, K.</span>, et al. (2024). <span class="italic">Cancer Epidemiology, Biomarkers & Prevention</span>.</p>
-<div class="mt-3 space-x-4">
-<a href="https://aacrjournals.org/cebp/article/33/9_Supplement/B010/747983" class="publication-link text-sm font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded-full">Paper</a>
-<a href="https://github.com/kayoderaheem/Cancer-Genomic" class="publication-link text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full">Code</a>
-</div>
-</div>
-<div class="section-card p-6 rounded-lg">
-<h3 class="font-bold text-lg text-gray-800">Enhancing Transformer-Based Segmentation for Breast Cancer Diagnosis using Auto-Augmentation and Search Optimisation Techniques.</h3>
-<p class="text-gray-600 mt-1"><span class="font-semibold">Raheem, K.</span>, et al. (2023). <span class="italic">Cancer Epidemiology, Biomarkers & Prevention</span>.</p>
-<div class="mt-3 space-x-4">
-<a href="https://arxiv.org/abs/2311.11065" class="publication-link text-sm font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded-full">Paper</a>
-<a href="https://github.com/kayoderaheem/Breast_cancer_segmentation" class="publication-link text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full">Code</a>
-</div>
-</div>
-<div class="section-card p-6 rounded-lg">
-<h3 class="font-bold text-lg text-gray-800">Therapeutic capability of selected medicinal plants' bioactive constituents against the mutant ovarian TP53 gene; a computational approach.</h3>
-<p class="text-gray-600 mt-1"><span class="font-semibold">Raheem, K.</span>, et al. (2023). <span class="italic">Advances in Biomarker Sciences and Technology</span>.</p>
-<div class="mt-3 space-x-4">
-<a href="https://www.sciencedirect.com/science/article/pii/S2543106423000029" class="publication-link text-sm font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded-full">Paper</a>
-</div>
-</div>
-</section>
-<!-- Projects Section -->
-<section id="projects" class="section-card rounded-lg p-8">
-<h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Featured Projects</h2>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-gray-50/50 rounded-lg overflow-hidden border border-gray-200/80">
-<img src="assets\images\neoantigen.png" alt="Vaccine Design" class="w-full h-40 object-cover">
-<div class="p-4">
-<h3 class="font-bold text-gray-800">Personalized Neoantigen Vaccines</h3>
-<p class="text-sm text-gray-600 mt-1">Designing mRNA vaccines from NGS data.</p>
-</div>
-</div>
-<div class="bg-gray-50/50 rounded-lg overflow-hidden border border-gray-200/80">
-<img src="assets\images\scatter_plot.png" alt="Data App" class="w-full h-40 object-cover">
-<div class="p-4">
-<h3 class="font-bold text-gray-800">cGEDs R Shiny App</h3>
-<p class="text-sm text-gray-600 mt-1">Interactive cancer drug-sensitivity analysis.</p>
-</div>
-</div>
-<div class="bg-gray-50/50 rounded-lg overflow-hidden border border-gray-200/80">
-<img src="assets\images\Multi-omics.png" alt="Molecular Simulation" class="w-full h-40 object-cover">
-<div class="p-4">
-<h3 class="font-bold text-gray-800">Multi-Omics & Structural Analysis</h3>
-<p class="text-sm text-gray-600 mt-1">Identifying biomarkers and drug targets.</p>
-</div>
-</div>
-</div>
-</section>
+          <ul class="flex flex-wrap gap-5" aria-label="Profiles and links">
+            <li><a href="https://x.com/yomikayode3" rel="me noopener" target="_blank" class="social-icon text-gray-400 hover:text-blue-500" title="X (Twitter)"><span class="sr-only">X (Twitter)</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/raheemkayode01" rel="me noopener" target="_blank" class="social-icon text-gray-400 hover:text-blue-700" title="LinkedIn"><span class="sr-only">LinkedIn</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a></li>
+            <li><a href="https://github.com/kayoderaheem" rel="me noopener" target="_blank" class="social-icon text-gray-400 hover:text-gray-800" title="GitHub"><span class="sr-only">GitHub</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"/></svg></a></li>
+            <li><a href="https://scholar.google.com/citations?user=6i3ypWwAAAAJ&hl=en" rel="me noopener" target="_blank" class="social-icon text-gray-400 hover:text-blue-600" title="Google Scholar"><span class="sr-only">Google Scholar</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-3.866 0-7 3.134-7 7c0 1.645.564 3.153 1.522 4.354l1.453-1.164A5.474 5.474 0 017 17c0-2.757 2.243-5 5-5s5 2.243 5 5c0 .352-.036.696-.106 1.028l1.453 1.164C19.436 20.153 20 18.645 20 17c0-3.866-3.134-7-7-7z"/></svg></a></li>
+            <li><a href="https://orcid.org/0000-0001-7975-9228" rel="me noopener" target="_blank" class="social-icon text-gray-400 hover:text-[#A6CE39]" title="ORCID iD 0000-0001-7975-9228"><span class="sr-only">ORCID iD</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-122c-5.6 0-10.1-4.6-10.1-10.1 0-5.6 4.5-10.1 10.1-10.1s10.1 4.5 10.1 10.1c0 5.6-4.5 10.1-10.1 10.1zm107.5 122h-32.4V79.1h31.4c29.9 0 43.6 21.4 43.6 53.6 0 35-21.7 53.5-42.6 53.5zm-1.6-93.4h-15.4v79.7h15.0c21.4 0 31.0-15.0 31.0-39.8 0-22.7-9.6-39.9-30.6-39.9z"/></svg></a></li>
+            <li><a href="mailto:kayoderaheem.y@gmail.com" class="social-icon text-gray-400 hover:text-rose-600" title="Email"><span class="sr-only">Email</span><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6a2 2 0 012-2h16a2 2 0 012 2v.4l-10 6.25L2 6.4V6zm0 2.74V18a2 2 0 002 2h16a2 2 0 002-2V8.74l-9.47 5.92a1 1 0 01-1.06 0L2 8.74z"/></svg></a></li>
+          </ul>
+        </div>
+      </section>
 
-<!-- Education Section -->
-<section id="education">
-<h2 class="text-3xl font-bold text-gray-900 mb-8">Education</h2>
-<div class="border-l-4 border-indigo-500 pl-6 space-y-10">
-<div>
-<p class="text-sm text-gray-500">2024 - Present</p>
-<h3 class="font-bold text-lg text-gray-800">Doctor of Philosophy, Bioinformatics and System Biology</h3>
-<p class="text-gray-600">University of Nebraska Medical Center, Omaha, NE, United State</p>
-</div>
-<div>
-<p class="text-sm text-gray-500">2022 - 2024</p>
-<h3 class="font-bold text-lg text-gray-800">Master of Science, Bioinformatics</h3>
-<p class="text-gray-600">COMSAT University, Islamabad, Pakistan</p>
-</div>
-<div>
-<p class="text-sm text-gray-500">2012 - 2017</p>
-<h3 class="font-bold text-lg text-gray-800">Bachelor of Science, Biochemistry</h3>
-<p class="text-gray-600">Adekunle Ajasin University, Akungba-Akoko, Nigeria</p>
-</div>
-</div>
-</section>
+      <!-- News -->
+      <section id="news" aria-labelledby="news-heading">
+        <h2 id="news-heading" class="text-3xl font-bold text-gray-900 mb-8">News</h2>
+        <ol class="space-y-6 list-none">
+          <li class="flex items-start space-x-4">
+            <span class="bg-indigo-100 text-indigo-800 font-semibold px-3 py-1 rounded-md text-sm whitespace-nowrap">Apr 2026</span>
+            <p class="text-gray-700">New paper out in <span class="font-semibold italic">In Silico Pharmacology</span>: <em><a class="underline hover:text-indigo-700" href="https://link.springer.com/article/10.1007/s40203-026-00631-6" rel="noopener" target="_blank">Personalized mRNA vaccine for breast cancer: in silico neoantigen discovery and immunogenic validation in a Pakistani patient cohort</a></em>.</p>
+          </li>
+          <li class="flex items-start space-x-4">
+            <span class="bg-indigo-100 text-indigo-800 font-semibold px-3 py-1 rounded-md text-sm whitespace-nowrap">Aug 2025</span>
+            <p class="text-gray-700">Our paper, <em>Kaempferols from Echinacea purpurea Demonstrate Anti-Cancer Potential by Targeting Anexelekto in Breast Cancer Therapy Using a Chemoinformatics Approach</em>, was accepted to <span class="font-semibold italic">Discover Oncology</span>.</p>
+          </li>
+          <li class="flex items-start space-x-4">
+            <span class="bg-indigo-100 text-indigo-800 font-semibold px-3 py-1 rounded-md text-sm whitespace-nowrap">Dec 2024</span>
+            <p class="text-gray-700">Joined the University of Nebraska Medical Center as a PhD student in Bioinformatics and Systems Biology.</p>
+          </li>
+          <li class="flex items-start space-x-4">
+            <span class="bg-indigo-100 text-indigo-800 font-semibold px-3 py-1 rounded-md text-sm whitespace-nowrap">Jul 2022</span>
+            <p class="text-gray-700">Presented work on the therapeutic capability of medicinal-plant bioactive constituents against the mutant ovarian TP53 gene at the 30th Conference on Intelligent Systems for Molecular Biology (ISMB), ISCB.</p>
+          </li>
+        </ol>
+      </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section-card rounded-lg p-8 text-center">
-<h2 class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
-<p class="text-gray-600 mb-6">I'm always open to discussing research, collaborations, or new opportunities.</p>
-<a href="mailto:kayoderaheem.y@gmail.com" class="inline-block bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
-Contact Me
-</a>
-</section>
-</div>
-</main>
+      <!-- Research -->
+      <section id="research" class="section-card rounded-lg p-8" aria-labelledby="research-heading">
+        <h2 id="research-heading" class="text-3xl font-bold text-gray-900 mb-8 text-center">Research Interests</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article class="text-center">
+            <img src="assets/images/cancer-genomics.img.png" alt="" loading="lazy" decoding="async" class="rounded-lg mb-4 w-full h-48 object-cover" />
+            <h3 class="font-bold text-lg text-gray-800">Cancer Genomics</h3>
+            <p class="text-gray-600">Using NGS data to characterize tumor genomic landscapes and surface novel biomarkers.</p>
+          </article>
+          <article class="text-center">
+            <img src="assets/images/Drug-discovery.img.png" alt="" loading="lazy" decoding="async" class="rounded-lg mb-4 w-full h-48 object-cover" />
+            <h3 class="font-bold text-lg text-gray-800">Computational Drug Discovery</h3>
+            <p class="text-gray-600">Structural bioinformatics for protein–ligand interaction studies and therapeutic design.</p>
+          </article>
+          <article class="text-center">
+            <img src="assets/images/ALML.img.png" alt="" loading="lazy" decoding="async" class="rounded-lg mb-4 w-full h-48 object-cover" />
+            <h3 class="font-bold text-lg text-gray-800">AI / Machine Learning</h3>
+            <p class="text-gray-600">Applying deep learning to complex biological data for robust, interpretable prediction.</p>
+          </article>
+        </div>
+      </section>
 
-<script>
-const menuButton = document.getElementById('menu-button');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('overlay');
-const navLinks = document.querySelectorAll('.nav-link');
+      <!-- Publications -->
+      <section id="publications" aria-labelledby="publications-heading">
+        <h2 id="publications-heading" class="text-3xl font-bold text-gray-900 mb-8">Selected Publications</h2>
+        <div class="space-y-6">
+          <article class="section-card p-6 rounded-lg">
+            <h3 class="font-bold text-lg text-gray-800">Personalized mRNA vaccine for breast cancer: in silico neoantigen discovery and immunogenic validation in a Pakistani patient cohort.</h3>
+            <p class="text-gray-600 mt-1"><span class="font-semibold">Raheem, K.</span>, et al. (2026). <span class="italic">In Silico Pharmacology</span>. doi:10.1007/s40203-026-00631-6</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <a href="https://link.springer.com/article/10.1007/s40203-026-00631-6" rel="noopener" target="_blank" class="publication-link text-sm font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded-full">Paper</a>
+              <a href="https://github.com/kayoderaheem/Cancer-Genomic" rel="noopener" target="_blank" class="publication-link text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full">Code</a>
+            </div>
+          </article>
+          <article class="section-card p-6 rounded-lg">
+            <h3 class="font-bold text-lg text-gray-800">Design of personalized neoantigen mRNA vaccines against breast cancer patients in Pakistan based on next-generation sequencing data.</h3>
+            <p class="text-gray-600 mt-1"><span class="font-semibold">Raheem, K.</span>, et al. (2024). <span class="italic">Cancer Epidemiology, Biomarkers &amp; Prevention</span>.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <a href="https://aacrjournals.org/cebp/article/33/9_Supplement/B010/747983" rel="noopener" target="_blank" class="publication-link text-sm font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded-full">Paper</a>
+              <a href="https://github.com/kayoderaheem/Cancer-Genomic" rel="noopener" target="_blank" class="publication-link text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full">Code</a>
+            </div>
+          </article>
+          <article class="section-card p-6 rounded-lg">
+            <h3 class="font-bold text-lg text-gray-800">Enhancing transformer-based segmentation for breast cancer diagnosis using auto-augmentation and search optimisation techniques.</h3>
+            <p class="text-gray-600 mt-1"><span class="font-semibold">Raheem, K.</span>, et al. (2023). <span class="italic">arXiv preprint</span>.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <a href="https://arxiv.org/abs/2311.11065" rel="noopener" target="_blank" class="publication-link text-sm font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded-full">Paper</a>
+              <a href="https://github.com/kayoderaheem/Breast_cancer_segmentation" rel="noopener" target="_blank" class="publication-link text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full">Code</a>
+            </div>
+          </article>
+          <article class="section-card p-6 rounded-lg">
+            <h3 class="font-bold text-lg text-gray-800">Therapeutic capability of selected medicinal plants' bioactive constituents against the mutant ovarian TP53 gene: a computational approach.</h3>
+            <p class="text-gray-600 mt-1"><span class="font-semibold">Raheem, K.</span>, et al. (2023). <span class="italic">Advances in Biomarker Sciences and Technology</span>.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <a href="https://www.sciencedirect.com/science/article/pii/S2543106423000029" rel="noopener" target="_blank" class="publication-link text-sm font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded-full">Paper</a>
+            </div>
+          </article>
+        </div>
+        <p class="mt-6 text-sm text-gray-500">
+          A complete list is available on
+          <a class="underline hover:text-indigo-700" href="https://scholar.google.com/citations?user=6i3ypWwAAAAJ&hl=en" rel="noopener" target="_blank">Google Scholar</a>.
+        </p>
+      </section>
 
-function toggleMenu() {
-sidebar.classList.toggle('open');
-overlay.classList.toggle('hidden');
-}
+      <!-- Projects -->
+      <section id="projects" class="section-card rounded-lg p-8" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" class="text-3xl font-bold text-gray-900 mb-8 text-center">Featured Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article class="bg-gray-50/50 rounded-lg overflow-hidden border border-gray-200/80 flex flex-col">
+            <img src="assets/images/neoantigen.png" alt="" loading="lazy" decoding="async" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">Personalized Neoantigen Vaccines</h3>
+              <p class="text-sm text-gray-600 mt-1">Designing mRNA vaccines from NGS data.</p>
+            </div>
+          </article>
+          <article class="bg-gray-50/50 rounded-lg overflow-hidden border border-gray-200/80 flex flex-col">
+            <img src="assets/images/scatter_plot.png" alt="" loading="lazy" decoding="async" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">cGEDs R Shiny App</h3>
+              <p class="text-sm text-gray-600 mt-1">Interactive cancer drug-sensitivity analysis.</p>
+            </div>
+          </article>
+          <article class="bg-gray-50/50 rounded-lg overflow-hidden border border-gray-200/80 flex flex-col">
+            <img src="assets/images/Multi-omics.png" alt="" loading="lazy" decoding="async" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">Multi-Omics &amp; Structural Analysis</h3>
+              <p class="text-sm text-gray-600 mt-1">Identifying biomarkers and drug targets.</p>
+            </div>
+          </article>
+        </div>
+      </section>
 
-menuButton.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', toggleMenu);
-navLinks.forEach(link => {
-link.addEventListener('click', () => {
-if (window.innerWidth <= 1024) {
-toggleMenu();
-}
-});
-});
+      <!-- Education -->
+      <section id="education" aria-labelledby="education-heading">
+        <h2 id="education-heading" class="text-3xl font-bold text-gray-900 mb-8">Education</h2>
+        <ol class="border-l-4 border-indigo-500 pl-6 space-y-10 list-none">
+          <li>
+            <p class="text-sm text-gray-500">2024 &ndash; Present</p>
+            <h3 class="font-bold text-lg text-gray-800">Doctor of Philosophy, Bioinformatics and Systems Biology</h3>
+            <p class="text-gray-600">University of Nebraska Medical Center, Omaha, NE, United States</p>
+          </li>
+          <li>
+            <p class="text-sm text-gray-500">2022 &ndash; 2024</p>
+            <h3 class="font-bold text-lg text-gray-800">Master of Science, Bioinformatics</h3>
+            <p class="text-gray-600">COMSATS University Islamabad, Pakistan</p>
+          </li>
+          <li>
+            <p class="text-sm text-gray-500">2012 &ndash; 2017</p>
+            <h3 class="font-bold text-lg text-gray-800">Bachelor of Science, Biochemistry</h3>
+            <p class="text-gray-600">Adekunle Ajasin University, Akungba-Akoko, Nigeria</p>
+          </li>
+        </ol>
+      </section>
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-const targetElement = document.querySelector(targetId);
-if(targetElement) {
-targetElement.scrollIntoView({
-behavior: 'smooth'
-});
-}
-});
-});
-</script>
+      <!-- Contact -->
+      <section id="contact" class="section-card rounded-lg p-8 text-center" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+        <p class="text-gray-600 mb-6 max-w-xl mx-auto">Open to discussing research, collaborations, or new opportunities in computational oncology, multi-omics, and AI for biomedicine.</p>
+        <a href="mailto:kayoderaheem.y@gmail.com" class="inline-block bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-200">
+          kayoderaheem.y@gmail.com
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const menuButton = document.getElementById('menu-button');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      function setMenu(open) {
+        sidebar.classList.toggle('open', open);
+        overlay.classList.toggle('hidden', !open);
+        if (menuButton) menuButton.setAttribute('aria-expanded', String(open));
+      }
+      function toggleMenu() {
+        setMenu(!sidebar.classList.contains('open'));
+      }
+
+      if (menuButton) menuButton.addEventListener('click', toggleMenu);
+      if (overlay) overlay.addEventListener('click', () => setMenu(false));
+
+      // Close menu after tapping a nav link on small screens.
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 1024) setMenu(false);
+        });
+      });
+
+      // Smooth scrolling for in-page anchors (respects reduced-motion).
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (!targetElement) return;
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+          // Move focus for keyboard users.
+          targetElement.setAttribute('tabindex', '-1');
+          targetElement.focus({ preventScroll: true });
+        });
+      });
+
+      // Scroll-spy: highlight the current section in the sidebar.
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+      const linkById = new Map(
+        Array.from(navLinks).map((link) => [link.getAttribute('href').slice(1), link])
+      );
+
+      function setActive(id) {
+        navLinks.forEach((link) => link.removeAttribute('aria-current'));
+        const active = linkById.get(id);
+        if (active) active.setAttribute('aria-current', 'true');
+      }
+
+      if ('IntersectionObserver' in window && sections.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible) setActive(visible.target.id);
+          },
+          { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
+        );
+        sections.forEach((section) => observer.observe(section));
+      }
+
+      // Keep copyright year fresh.
+      const yearEl = document.getElementById('copyright-year');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    })();
+  </script>
 </body>
 </html>
-
