@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#4f46e5" />
 
   <title>Kayode Raheem, MS — Bioinformatics & Computational Oncology</title>
-  <meta name="description" content="Kayode Raheem is a PhD student in Bioinformatics and Systems Biology at the University of Nebraska Medical Center, working on computational oncology, multi-omics, AI/ML, and computational drug discovery." />
+  <meta name="description" content="Kayode Raheem is a PhD student in Bioinformatics and Systems Biology at the University of Nebraska Medical Center, working on computational oncology, spatial and single-cell omics, AI/ML for tumor microenvironment and therapy resistance, and computational method development." />
   <meta name="author" content="Kayode Raheem" />
   <link rel="canonical" href="https://kayoderaheem.github.io/" />
 
@@ -40,13 +40,36 @@
   <style>
     body {
       font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background-color: #f9fafb;
+      color: #1f2937;
+      background-color: #f8fafc; /* slate-50 */
       background-image:
-        radial-gradient(at 20% 15%, hsla(212, 72%, 93%, 0.5) 0px, transparent 50%),
-        radial-gradient(at 80% 20%, hsla(289, 62%, 93%, 0.4) 0px, transparent 50%),
-        radial-gradient(at 10% 85%, hsla(190, 72%, 93%, 0.5) 0px, transparent 50%),
-        radial-gradient(at 85% 90%, hsla(340, 72%, 95%, 0.4) 0px, transparent 50%);
-      color: #374151;
+        /* Faint dot lattice — evokes data points / a heatmap grid */
+        radial-gradient(circle at 1px 1px, rgba(79, 70, 229, 0.10) 1px, transparent 0),
+        /* Cool scientific gradient field — indigo / cyan / teal / violet */
+        radial-gradient(at 18% 12%, rgba(99, 102, 241, 0.16) 0px, transparent 55%),
+        radial-gradient(at 82% 18%, rgba(14, 165, 233, 0.14) 0px, transparent 55%),
+        radial-gradient(at 12% 88%, rgba(20, 184, 166, 0.12) 0px, transparent 55%),
+        radial-gradient(at 88% 92%, rgba(124, 58, 237, 0.14) 0px, transparent 55%);
+      background-size: 24px 24px, auto, auto, auto, auto;
+      background-attachment: fixed;
+    }
+    /* Decorative connectome / neural-graph layer behind content (non-interactive). */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.55;
+      background-repeat: no-repeat;
+      background-position: top right, bottom left;
+      background-size: 520px auto, 460px auto;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='none' stroke='%234f46e5' stroke-width='0.8' opacity='0.35'><g><line x1='80' y1='120' x2='240' y2='80'/><line x1='80' y1='120' x2='240' y2='200'/><line x1='80' y1='120' x2='240' y2='320'/><line x1='80' y1='280' x2='240' y2='80'/><line x1='80' y1='280' x2='240' y2='200'/><line x1='80' y1='280' x2='240' y2='320'/><line x1='80' y1='440' x2='240' y2='200'/><line x1='80' y1='440' x2='240' y2='320'/><line x1='80' y1='440' x2='240' y2='440'/><line x1='240' y1='80' x2='400' y2='160'/><line x1='240' y1='200' x2='400' y2='160'/><line x1='240' y1='200' x2='400' y2='320'/><line x1='240' y1='320' x2='400' y2='320'/><line x1='240' y1='320' x2='400' y2='440'/><line x1='240' y1='440' x2='400' y2='440'/><line x1='400' y1='160' x2='540' y2='280'/><line x1='400' y1='320' x2='540' y2='280'/><line x1='400' y1='440' x2='540' y2='280'/></g><g fill='%234f46e5' stroke='none'><circle cx='80' cy='120' r='4'/><circle cx='80' cy='280' r='4'/><circle cx='80' cy='440' r='4'/><circle cx='240' cy='80' r='4'/><circle cx='240' cy='200' r='4'/><circle cx='240' cy='320' r='4'/><circle cx='240' cy='440' r='4'/><circle cx='400' cy='160' r='5'/><circle cx='400' cy='320' r='5'/><circle cx='400' cy='440' r='5'/><circle cx='540' cy='280' r='6' fill='%230ea5e9'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='none' stroke='%2314b8a6' stroke-width='1' opacity='0.35'><path d='M60 60 C 140 130, 140 230, 60 300 C -20 370, -20 470, 60 540' stroke-dasharray='2 4'/><path d='M120 60 C 200 130, 200 230, 120 300 C 40 370, 40 470, 120 540' stroke-dasharray='2 4'/><g fill='%2314b8a6' stroke='none' opacity='0.75'><circle cx='90' cy='100' r='2.5'/><circle cx='110' cy='160' r='2.5'/><circle cx='90' cy='220' r='2.5'/><circle cx='110' cy='280' r='2.5'/><circle cx='90' cy='340' r='2.5'/><circle cx='110' cy='400' r='2.5'/><circle cx='90' cy='460' r='2.5'/><circle cx='110' cy='520' r='2.5'/></g></svg>");
+    }
+    @media (max-width: 1024px) {
+      body::before { opacity: 0.3; background-size: 320px auto, 280px auto; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -109,6 +132,7 @@
       main { margin: 0 !important; padding: 0 !important; }
       .section-card { background: none !important; box-shadow: none !important; border: none !important; }
       body { background: none !important; color: #000 !important; }
+      body::before { display: none !important; }
     }
   </style>
 
@@ -144,13 +168,17 @@
     "knowsAbout": [
       "Bioinformatics",
       "Computational Oncology",
-      "Multi-omics",
-      "Single-cell genomics",
-      "Spatial transcriptomics",
+      "Tumor Microenvironment",
+      "Therapy Resistance",
+      "Spatial Transcriptomics",
+      "Spatial Omics Method Development",
+      "Single-cell Genomics",
+      "Multi-omics Integration",
       "Graph Neural Networks",
-      "Transformer models",
-      "Computational drug discovery",
-      "Clinical informatics"
+      "Transformer Models",
+      "Deep Learning for Biomedicine",
+      "Computational Drug Discovery",
+      "Clinical Informatics"
     ]
   }
   </script>
@@ -204,15 +232,20 @@
           <p class="text-sm font-semibold tracking-widest text-indigo-600 uppercase mb-3">Bioinformatics &middot; Computational Oncology</p>
           <h2 id="home-heading" class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Hi, I'm Kayode Raheem.</h2>
           <p class="text-lg sm:text-xl text-gray-600 mb-6 max-w-3xl">
-            I build AI-driven, reproducible pipelines that turn multi-omics and clinical data into translational insights for cancer research.
+            I build AI-driven, reproducible pipelines that turn multi-omics and spatial data into translational insights for cancer research &mdash; with a focus on how the spatial organization of tumors drives treatment resistance.
+          </p>
+          <p class="text-base leading-relaxed text-gray-600 mb-4 max-w-3xl">
+            I work across <span class="font-medium">bioinformatics</span>, <span class="font-medium">AI/ML</span>, and <span class="font-medium">translational medicine</span>, integrating <span class="font-medium">genomics and spatial/single-cell omics</span> with <span class="font-medium">digital pathology</span> and <span class="font-medium">clinical informatics</span> to model tumor evolution, forecast therapy response, and discover biomarkers. Methodologically, I build <span class="font-medium">graph neural networks</span> and <span class="font-medium">transformer models</span> with causal and temporal analytics, delivered as <span class="font-medium">reproducible pipelines</span> (Nextflow/nf-core, containers, HPC/cloud).
           </p>
           <p class="text-base leading-relaxed text-gray-600 mb-8 max-w-3xl">
-            I work across <span class="font-medium">bioinformatics</span>, <span class="font-medium">AI/ML</span>, and <span class="font-medium">translational medicine</span>, integrating <span class="font-medium">genomics and spatial/single-cell omics</span> with <span class="font-medium">digital pathology</span> and <span class="font-medium">clinical informatics</span> to model tumor evolution, forecast therapy response, and discover biomarkers. Methodologically, I build <span class="font-medium">graph neural networks</span> and <span class="font-medium">transformer models</span> with causal and temporal analytics, delivered as <span class="font-medium">reproducible pipelines</span> (Nextflow/nf-core, containers, HPC/cloud). I also collaborate on <span class="font-medium">computational drug discovery</span> and pursue <span class="font-medium">health equity</span> through generalizable, fair evaluation.
+            I am especially interested in how the <span class="font-medium">spatial architecture of the tumor microenvironment</span> &mdash; cellular neighborhoods, niches, and tissue context &mdash; shapes <span class="font-medium">therapy resistance</span>, and in <span class="font-medium">computational method development for spatial omics</span> (Visium, Xenium, MERFISH, CODEX), including graph- and transformer-based models for cell-type deconvolution, niche detection, and spatially aware survival modeling. I also collaborate on <span class="font-medium">computational drug discovery</span> and pursue <span class="font-medium">health equity</span> through generalizable, fair evaluation.
           </p>
 
           <ul class="flex flex-wrap gap-2 mb-8" aria-label="Areas of focus">
             <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Computational Oncology</li>
-            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Spatial / Single-cell Omics</li>
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Spatial Omics &amp; Methods</li>
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Tumor Microenvironment</li>
+            <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Therapy Resistance</li>
             <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">GNNs &amp; Transformers</li>
             <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Drug Discovery</li>
             <li class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm">Clinical Informatics</li>
