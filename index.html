@@ -136,6 +136,49 @@
     }
   </style>
 
+  <style>
+    /* Presentation tab (rotated along right edge) */
+    .presentation-tab {
+      position: fixed;
+      right: -72px;
+      top: 44%;
+      z-index: 60;
+      transform: rotate(-90deg);
+      transform-origin: center;
+      background: #4f46e5;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px 8px 0 0;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .presentation-panel {
+      display: none;
+      position: fixed;
+      right: 16px;
+      top: 36%;
+      z-index: 61;
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      padding: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .presentation-panel.open { display: block; }
+
+    .presentation-panel h4 { margin: 0 0 8px 0; font-size: 0.95rem; }
+
+    .presentation-panel a { display: block; padding: 8px 10px; border-radius: 6px; color: #374151; text-decoration: none; margin-bottom: 6px; background: #f8fafc; }
+    .presentation-panel a:hover { background: #eef2ff; color: #1f2937; }
+
+    @media (max-width: 1024px) { .presentation-tab, .presentation-panel { display: none !important; } }
+  </style>
+
   <!-- Structured data: Person -->
   <script type="application/ld+json">
   {
@@ -453,6 +496,16 @@
     </div>
   </main>
 
+  <!-- Rotated presentation tab + panel -->
+  <a href="#" id="presentation-tab" class="presentation-tab" aria-controls="presentation-panel" aria-expanded="false">Presentations</a>
+  <div id="presentation-panel" class="presentation-panel" role="dialog" aria-label="Presentations">
+    <h4>Presentations</h4>
+    <p class="text-sm text-gray-500 mb-2">Add your presentation files to <strong>assets/presentations/</strong> and update links below.</p>
+    <a href="assets/presentations/oral.pdf" target="_blank" rel="noopener">Oral presentation (PDF)</a>
+    <a href="assets/presentations/poster.pdf" target="_blank" rel="noopener">Poster (PDF)</a>
+    <a href="assets/presentations/slides.html" target="_blank" rel="noopener">Interactive slides</a>
+  </div>
+
   <script>
     (function () {
       const menuButton = document.getElementById('menu-button');
@@ -521,6 +574,32 @@
       }
 
       // Keep copyright year fresh.
+      // Presentation panel toggle (rotated tab)
+      const presentationTab = document.getElementById('presentation-tab');
+      const presentationPanel = document.getElementById('presentation-panel');
+
+      function setPresentation(open) {
+        if (!presentationPanel || !presentationTab) return;
+        presentationPanel.classList.toggle('open', open);
+        presentationTab.setAttribute('aria-expanded', String(open));
+      }
+
+      if (presentationTab) {
+        presentationTab.addEventListener('click', function (e) {
+          e.preventDefault();
+          setPresentation(!presentationPanel.classList.contains('open'));
+        });
+      }
+
+      // Close panel when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!presentationPanel || !presentationTab) return;
+        if (!presentationPanel.classList.contains('open')) return;
+        const target = e.target;
+        if (presentationPanel.contains(target) || presentationTab.contains(target)) return;
+        setPresentation(false);
+      });
+
       const yearEl = document.getElementById('copyright-year');
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     })();
